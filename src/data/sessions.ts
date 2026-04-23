@@ -40,8 +40,8 @@ export const sessions = [
   },
   {
     id: 2,
-    month: 'Apr',
-    day: '17',
+    month: 'May',
+    day: '02',
     title: 'Systems Design',
     time: '1:00 PM - 3:00 PM',
     desc: 'Designing systems that scale and hold up in the real world.',
@@ -77,7 +77,7 @@ Begin thinking in terms of systems, not just individual applications.
   {
     id: 4,
     month: 'May',
-    day: '02',
+    day: '08',
     title: 'Hosting & Infrastructure',
     time: '10:00 AM - 12:00 PM',
     desc: 'Running and managing systems beyond your local machine.',
