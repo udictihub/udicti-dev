@@ -11,7 +11,7 @@ const breakpoints = [
 ];
 
 const PhotosCard = () => {
-  const [config, setConfig] = useState(breakpoints[2]); 
+  const [config, setConfig] = useState(breakpoints[2]);
   const [shuffledPhotos, setShuffledPhotos] = useState(archivePhotos);
 
   // Track ONLY the specific cells that are currently swapping
@@ -98,8 +98,16 @@ const PhotosCard = () => {
       className="py-24 flex flex-col items-center justify-center overflow-hidden bg-gray-200"
     >
       <div className="text-center mb-16 relative z-10 px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-          The Archive
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]">
+          The{' '}
+          <span
+            className="bg-[#0864AF] text-white px-4 py-1 font-mono shadow-lg inline-block mt-1 sm:mt-0"
+            style={{
+              clipPath: 'polygon(2% 8%, 98% 4%, 99% 87%, 4% 94%, 0% 50%)',
+            }}
+          >
+            Archive
+          </span>
         </h2>
         <p className="mt-4 text-lg text-gray-600">
           Glimpses from our past sessions.
@@ -123,7 +131,7 @@ const PhotosCard = () => {
 
             rowCells.push(
               <div
-                key={cellIdx} 
+                key={cellIdx}
                 className="group relative cursor-pointer flex-shrink-0 bg-gray-300 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:z-20 shadow-xl"
                 style={{
                   width: `${W}px`,

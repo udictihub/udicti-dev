@@ -15,9 +15,65 @@ const SessionsSection = () => {
       id="sessions"
       className="max-w-7xl mx-auto px-6 py-20 relative border-t-2 border-gray-200"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative">
-        {/* Left Column: Sticky Detail View */}
-        <div className="lg:col-span-6 order-2 lg:order-1 sticky top-32 self-start lg:pr-8 transition-all duration-500 ease-in-out ">
+      <div className="lg:hidden mb-10 mt-4">
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-6">
+          7 Days of <br />
+          <span
+            className="bg-[#0864AF] text-white px-4 py-1 font-mono shadow-lg inline-block mt-2"
+            style={{
+              clipPath: 'polygon(2% 8%, 98% 4%, 99% 87%, 4% 94%, 0% 50%)',
+            }}
+          >
+            Deep Dives
+          </span>
+        </h2>
+        <p className="text-lg text-gray-600 leading-relaxed max-w-md">
+          Explore the sessions architected to transition from basic concepts to
+          advanced tech ecosystems, business modeling, and AI integration.
+          Scroll and tap any session to see full details.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative lg:border-l-2 lg:border-gray-100">
+        <div className="lg:col-span-6 order-1 lg:order-1 space-y-6 flex flex-col items-start lg:pr-8 ">
+          {sessions.map((session) => (
+            <div
+              key={session.id}
+              className="w-full cursor-pointer"
+              onMouseEnter={() => setActiveId(session.id)}
+              onClick={() => {
+                setActiveId(session.id);
+                // Mobile UX: Scroll down directly to the details when a card is clicked
+                if (window.innerWidth < 1024) {
+                  document
+                    .getElementById('session-detail')
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              <div
+                className={`transition-all duration-300 ${
+                  activeId === session.id
+                    ? 'scale-[1.02] ring-primary border-transparent'
+                    : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <CalendarCard
+                  month={session.month}
+                  day={session.day}
+                  title={session.title}
+                  description={session.desc}
+                  time={session.time}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          id="session-detail"
+          className="lg:col-span-6 order-2 lg:order-2 sticky top-32 self-start lg:pl-12 lg:border-l-2 lg:border-gray-100 px-1 transition-all duration-500 ease-in-out "
+        >
           {activeSession ? (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-12">
               <div className="w-full h-48 bg-gray-200 rounded-2xl overflow-hidden mb-6 shadow-md shrink-0">
@@ -83,11 +139,12 @@ const SessionsSection = () => {
               </div>
             </div>
           ) : (
-            <div className="animate-in fade-in duration-500 mt-12">
+            // Desktop-only initial state (Hidden on mobile because we already displayed it at the top above the grid)
+            <div className="hidden lg:block animate-in fade-in duration-500 mt-12">
               <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-6">
                 7 Days of <br />
                 <span
-                  className="bg-[#0864AF] text-white px-4 py-1 font-mono shadow-lg"
+                  className="bg-[#0864AF] text-white px-4 py-1 font-mono shadow-lg inline-block mt-2"
                   style={{
                     clipPath: 'polygon(2% 8%, 98% 4%, 99% 87%, 4% 94%, 0% 50%)',
                   }}
@@ -102,42 +159,6 @@ const SessionsSection = () => {
               </p>
             </div>
           )}
-        </div>
-
-        {/* Right Column: Scrollable Content List */}
-        <div className="lg:col-span-6 space-y-6 flex flex-col items-end lg:border-l-2 lg:border-gray-100 lg:pl-12">
-          {sessions.map((session) => (
-            <div
-              key={session.id}
-              className="w-full cursor-pointer"
-              onMouseEnter={() => setActiveId(session.id)}
-              onClick={() => {
-                setActiveId(session.id);
-                // Mobile UX: Scroll to the details view when a card is clicked
-                if (window.innerWidth < 1024) {
-                  document
-                    .getElementById('sessions')
-                    ?.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              <div
-                className={`transition-all duration-300 ${
-                  activeId === session.id
-                    ? 'scale-[1.02] ring-primary border-transparent'
-                    : 'opacity-70 hover:opacity-100'
-                }`}
-              >
-                <CalendarCard
-                  month={session.month}
-                  day={session.day}
-                  title={session.title}
-                  description={session.desc}
-                  time={session.time}
-                />
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
