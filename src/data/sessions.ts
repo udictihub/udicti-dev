@@ -1,15 +1,14 @@
 import dedent from 'dedent';
-
+import codeAgentImg from '@/assets/session/CodeAgent.png';
 export const sessions = [
   {
     id: 1,
     month: 'Apr',
     day: '24',
     title: 'Agentic Coding',
-    time: '10:00 AM - 12:00 PM',
+    time: '09:00 AM - 10:30 PM',
     desc: 'Working with AI as part of the development process.',
-    image:
-      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+    image: codeAgentImg.src,
     markdown: dedent`
       # Agentic Coding
       
