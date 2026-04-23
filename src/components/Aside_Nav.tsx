@@ -120,7 +120,7 @@ const Aside_Nav = () => {
         {/* Brand */}
         <div className="mb-12">
           <a
-            href="#"
+            href="https://udicti.udsm.ac.tz"
             className="flex items-center gap-3"
           >
             <img
