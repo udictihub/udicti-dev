@@ -6,7 +6,6 @@ const navLinks = [
   { name: 'Manifesto', href: '#manifesto' },
   { name: 'Sessions', href: '#sessions' },
   { name: 'The Archive', href: '#archive' },
-  { name: 'People', href: '#team' },
 ];
 
 const Aside_Nav = () => {
@@ -79,6 +78,7 @@ const Aside_Nav = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
+
       {isOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8">
           <nav className="flex flex-col space-y-8 text-3xl font-bold text-gray-800">
@@ -89,9 +89,25 @@ const Aside_Nav = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`${isActive ? 'text-blue-600' : 'text-gray-800'}`}
+                  className={`flex items-center group transition-all duration-300 ${
+                    isActive ? 'text-[#0864AF]' : 'text-gray-800'
+                  }`}
                 >
-                  {link.name}
+                  <span
+                    className={`relative flex items-center mr-4 w-4 h-4 transition-all duration-300
+                      /* Draw the first arrow */
+                      border-t-[3px] border-r-[3px] border-current rotate-45
+                      /* The second arrow via pseudo-element */
+                      after:content-[''] after:absolute after:left-2 after:w-full after:h-full 
+                      after:border-t-[3px] after:border-r-[3px] after:border-current
+                      ${
+                        isActive
+                          ? 'text-[#0864AF] translate-x-2'
+                          : 'text-gray-400 group-hover:text-[#0864AF]'
+                      }
+                    `}
+                  ></span>
+                  <span>{link.name}</span>
                 </a>
               );
             })}
@@ -117,7 +133,7 @@ const Aside_Nav = () => {
             </h1>
           </a>
           <p className="text-xs tracking-widest text-gray-500 uppercase font-semibold mt-2 ml-1">
-            Tech Initiative
+            Tech Hub
           </p>
         </div>
 
