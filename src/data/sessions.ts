@@ -6,9 +6,10 @@ export const sessions = [
     month: 'Apr',
     day: '25',
     title: 'Agentic Coding',
-    time: '09:00 AM - 10:30 PM',
+    time: '09:00 AM - 10:30 AM',
     desc: 'Working with AI as part of the development process.',
     image: codeAgentImg.src,
+
     markdown: dedent`
       # Agentic Coding
       

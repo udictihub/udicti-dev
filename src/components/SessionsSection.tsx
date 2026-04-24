@@ -32,6 +32,14 @@ const SessionsSection = () => {
           advanced tech ecosystems, business modeling, and AI integration.
           Scroll and tap any session to see full details.
         </p>
+        <a
+          href="https://forms.gle/aHKHH27wWHqToLZu7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#b18111] text-white font-bold py-3 px-8 rounded-full hover:bg-yellow-600 transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+        >
+          RSVP Now
+        </a>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative lg:border-l-2 lg:border-gray-100">
@@ -86,6 +94,14 @@ const SessionsSection = () => {
               <p className="text-primary font-bold mb-4 tracking-wide uppercase text-sm">
                 {activeSession.time} • {activeSession.month} {activeSession.day}
               </p>
+              <a
+                href="https://forms.gle/aHKHH27wWHqToLZu7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mb-4 bg-[#0864AF] text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                RSVP for this Session
+              </a>
 
               <div className="mt-8 text-gray-800">
                 <ReactMarkdown
