@@ -4,7 +4,7 @@ export const sessions = [
   {
     id: 1,
     month: 'Apr',
-    day: '24',
+    day: '25',
     title: 'Agentic Coding',
     time: '09:00 AM - 10:30 PM',
     desc: 'Working with AI as part of the development process.',

@@ -64,6 +64,7 @@ const Abstract = () => {
             >
               builders
             </span>
+            <br className="md:hidden" />
             meet systems and practice.
           </h2>
 
