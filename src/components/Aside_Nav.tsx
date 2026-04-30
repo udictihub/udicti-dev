@@ -44,7 +44,7 @@ const Aside_Nav = () => {
   return (
     <>
       {/* Mobile Top Bar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-lg border-b border-gray-200 z-50 flex items-center justify-between px-6 ">
+      <div className="xl:hidden fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-lg border-b border-gray-200 z-50 flex items-center justify-between px-6 ">
         <h1 className="text-xl font-black text-gray-900 tracking-tighter">
           UDICTI<span className="text-blue-600">.</span>
         </h1>
@@ -80,7 +80,7 @@ const Aside_Nav = () => {
       {/* Mobile Menu Overlay */}
 
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8">
+        <div className="xl:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8">
           <nav className="flex flex-col space-y-8 text-3xl font-bold text-gray-800">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
@@ -116,7 +116,7 @@ const Aside_Nav = () => {
       )}
 
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex flex-col fixed top-24 left-12 w-64 z-50">
+      <aside className="hidden xl:flex flex-col fixed top-24 left-12 w-64 z-50">
         {/* Brand */}
         <div className="mb-12">
           <a

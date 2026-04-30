@@ -43,7 +43,7 @@ export const sessions = [
     month: 'May',
     day: '02',
     title: 'Systems Design',
-    time: '1:00 PM - 3:00 PM',
+    time: '09:00 AM - 12:00 PM',
     desc: 'Designing systems that scale and hold up in the real world.',
     image:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
