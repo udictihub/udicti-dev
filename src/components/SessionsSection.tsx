@@ -72,6 +72,7 @@ const SessionsSection = () => {
                   title={session.title}
                   description={session.desc}
                   time={session.time}
+                  isCompleted={session.completed === 'done'}
                 />
               </div>
             </div>

@@ -9,7 +9,7 @@ export const sessions = [
     time: '09:00 AM - 10:30 AM',
     desc: 'Working with AI as part of the development process.',
     image: codeAgentImg.src,
-
+    completed: 'done',
     markdown: dedent`
       # Agentic Coding
       
@@ -22,6 +22,7 @@ export const sessions = [
       ## What we will explore
       
       - Using AI to assist development workflows  
+
       - Automating repetitive tasks  
       - Working with tools that extend beyond code generation  
       
@@ -47,6 +48,7 @@ export const sessions = [
     desc: 'Designing systems that scale and hold up in the real world.',
     image:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    completed: 'done',
     markdown: dedent`
 # Systems Design
 
@@ -77,7 +79,7 @@ Begin thinking in terms of systems, not just individual applications.
   {
     id: 4,
     month: 'May',
-    day: '08',
+    day: '09',
     title: 'Hosting & Infrastructure',
     time: '10:00 AM - 12:00 PM',
     desc: 'Running and managing systems beyond your local machine.',
@@ -114,7 +116,7 @@ Gain a practical understanding of how systems run in real environments.
   {
     id: 5,
     month: 'May',
-    day: '09',
+    day: '14',
     title: 'Skills That Matter',
     time: '10:00 AM - 12:00 PM',
     desc: 'Developing the thinking and communication behind strong engineering.',
