@@ -85,6 +85,7 @@ Begin thinking in terms of systems, not just individual applications.
     desc: 'Running and managing systems beyond your local machine.',
     image:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
+    completed: 'done',
     markdown: dedent`
 # Hosting & Infrastructure
 
@@ -116,44 +117,47 @@ Gain a practical understanding of how systems run in real environments.
   {
     id: 5,
     month: 'May',
-    day: '14',
-    title: 'Skills That Matter',
-    time: '10:00 AM - 12:00 PM',
-    desc: 'Developing the thinking and communication behind strong engineering.',
+    day: '16',
+    title: 'Idea Mapping',
+    time: '09:00 AM - 12:00 PM',
+    desc: 'From first-principles thinking to systems and execution.',
     image:
-      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
-    markdown: dedent`
-# Skills That Matter
-
-Technical ability alone is not enough. Strong engineers know how to think clearly, communicate, and work with others.
-
----
-
-## What we will focus on
-
-- Clear communication of ideas  
-- Problem-solving approaches  
-- Working effectively in teams  
-- Continuous learning and growth  
-
----
-
-## Key idea
-
-How you think and communicate shapes the impact of what you build.
-
----
-
-## Outcome
-
-Build habits that support long-term growth in engineering.
-`,
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+    markdown: `
+  # Idea Mapping
+  
+  Ideas rarely appear fully formed. Most great systems begin from simple observations, frustrations, repeated workflows, or unanswered questions.
+  
+  This session focuses on how builders and problem solvers think — from identifying problems to mapping ideas into practical systems and execution.
+  
+  ---
+  
+  ## What We Will Explore
+  - **First-Principles Thinking:** Breaking problems down to their fundamentals.
+  - **Problem Mapping:** Understanding constraints, workflows, and opportunities.
+  - **Systems Thinking:** Seeing how components connect and influence each other.
+  - **Execution:** Turning ideas into practical and scalable solutions.
+  - **Team Discussions:** Collaboratively analyzing and approaching real-world problems.
+  
+  ---
+  
+  ## Why This Matters
+  
+  Good builders do not just write code or use tools. They learn how to observe systems, question assumptions, and think structurally about solving problems.
+  
+  This session is designed to expose students to practical thinking approaches used in engineering, product development, startups, and modern technology ecosystems.
+  
+  ---
+  
+  ## The Goal
+  
+  Move beyond simply consuming technology and start learning how to think, design, and build intentionally.
+    `,
   },
-
   {
     id: 6,
     month: 'May',
-    day: '15',
+    day: '20',
     title: 'Enterprise Systems',
     time: '10:00 AM - 12:00 PM',
     desc: 'Understanding how large organizations build and manage technology.',
