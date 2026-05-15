@@ -63,7 +63,7 @@ const SessionsSection = () => {
                 className={`transition-all duration-300 ${
                   activeId === session.id
                     ? 'scale-[1.02] ring-primary border-transparent'
-                    : 'opacity-70 hover:opacity-100'
+                    : 'opacity-100 hover:opacity-100'
                 }`}
               >
                 <CalendarCard
