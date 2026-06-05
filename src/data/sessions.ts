@@ -123,6 +123,8 @@ Gain a practical understanding of how systems run in real environments.
     desc: 'From first-principles thinking to systems and execution.',
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+    completed: 'done',
+
     markdown: `
   # Idea Mapping
   
@@ -156,7 +158,46 @@ Gain a practical understanding of how systems run in real environments.
   },
   {
     id: 6,
-    month: 'May',
+    month: 'June',
+    day: '06',
+    title: 'Leveraging OSS',
+    time: '09:00 AM - 12:00 PM',
+    desc: 'Exploring how modern computing is powered by open-source software, communities, and technologies.',
+    image:
+      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
+    markdown: dedent`
+    
+    # Leveraging OSS
+    
+    Modern software is rarely built from scratch. From operating systems and databases to containers, frameworks, and AI tooling, open-source software forms the foundation of today's computing landscape.
+    
+    ---
+    
+    ## What we will explore
+    
+    * Open-source software and ecosystems
+    * Licenses and governance
+    * Building with existing technologies
+    * Communities and contribution
+    * OSS in production systems
+    
+    ---
+    
+    ## Key idea
+    
+    Great engineers don't reinvent everything—they leverage existing tools, technologies, and communities to build faster and solve bigger problems.
+    
+    ---
+    
+    ## Outcome
+    
+    Understand how open-source software powers modern systems and how to effectively leverage and contribute to these ecosystems.
+    `,
+  },
+
+  {
+    id: 7,
+    month: 'June',
     day: '20',
     title: 'Enterprise Systems',
     time: '10:00 AM - 12:00 PM',
