@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import labs from '@/assets/3D.png';
 
 const rotatingWords = ['builders', 'students', 'engineers', 'operators'];
 
@@ -173,7 +174,7 @@ const Abstract = () => {
                   className="hover:scale-105 transition-transform"
                 >
                   <img 
-                    src="https://robotics.udsm.ac.tz/assets/yellow%20logo%20with%20no%20bg%20copy-YCOGGuv8.png" 
+                    src={labs.src} 
                     alt="UDSM Robotics Logo"
                     className="h-14 w-auto object-contain"
                   />

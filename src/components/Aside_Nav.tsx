@@ -116,7 +116,7 @@ const Aside_Nav = () => {
       )}
 
       {/* Desktop Sidebar */}
-      <aside className="hidden xl:flex flex-col fixed top-24 left-12 w-64 z-50">
+      <aside className="hidden xl:flex flex-col sticky top-24 w-full max-w-64 self-start pl-5">
         {/* Brand */}
         <div className="mb-12">
           <a
