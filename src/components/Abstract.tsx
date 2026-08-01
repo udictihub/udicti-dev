@@ -4,7 +4,6 @@ import { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import labs from '@/assets/3D.png';
-import labs from '@/assets/3D.png';
 
 const rotatingWords = ['builders', 'students', 'founders'];
 
