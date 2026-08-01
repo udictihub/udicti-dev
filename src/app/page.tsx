@@ -7,12 +7,12 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
       <Aside_Nav />
-      <div className="pt-16 xl:pt-0 w-full max-w-[100vw]  overflow-x-hidden">
+      <div className="pt-14 xl:pt-0  flex-1 min-w-0 overflow-x-hidden ">
         <Abstract />
-        <SessionsSection />
         <PhotosCard />
+        <SessionsSection />
         <Footer />
       </div>
     </main>
