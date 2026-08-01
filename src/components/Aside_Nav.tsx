@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-
+import udsmLogo from '@/assets/udsm_logo.png';
 const navLinks = [
   { name: 'Manifesto', href: '#manifesto' },
   { name: 'Sessions', href: '#sessions' },
@@ -45,12 +45,12 @@ const Aside_Nav = () => {
     <>
       {/* Mobile Top Bar */}
       <div className="xl:hidden fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-lg border-b border-gray-200 z-50 flex items-center justify-between px-6 ">
-        <h1 className="text-xl font-black text-gray-900 tracking-tighter">
+        <h1 className="text-xl font-black text-[#0864AF] tracking-tighter">
           UDICTI<span className="text-blue-600">.</span>
         </h1>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-900 focus:outline-none"
+          className="text-[#0864AF] focus:outline-none"
         >
           <svg
             className="w-8 h-8"
@@ -80,43 +80,56 @@ const Aside_Nav = () => {
       {/* Mobile Menu Overlay */}
 
       {isOpen && (
-        <div className="xl:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8">
-          <nav className="flex flex-col space-y-8 text-3xl font-bold text-gray-800">
+        <div className="xl:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8 flex flex-col justify-between">
+          <nav className="flex flex-col space-y-6 text-base tracking-wide">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center group transition-all duration-300 ${
-                    isActive ? 'text-[#0864AF]' : 'text-gray-800'
+                  className={`flex items-center group transition-all duration-300 pl-4 ${
+                    isActive
+                      ? 'text-[#0864AF] font-bold border-l-4 border-[#0864AF]'
+                      : 'text-gray-500 font-semibold border-l-4 border-transparent hover:border-[#0864AF]'
                   }`}
                 >
                   <span
-                    className={`relative flex items-center mr-4 w-4 h-4 transition-all duration-300
-                      /* Draw the first arrow */
-                      border-t-[3px] border-r-[3px] border-current rotate-45
-                      /* The second arrow via pseudo-element */
-                      after:content-[''] after:absolute after:left-2 after:w-full after:h-full 
-                      after:border-t-[3px] after:border-r-[3px] after:border-current
-                      ${
-                        isActive
-                          ? 'text-[#0864AF] translate-x-2'
-                          : 'text-gray-400 group-hover:text-[#0864AF]'
-                      }
-                    `}
+                    className={`relative flex items-center mr-4 w-3 h-3 transition-all duration-300
+            border-t-2 border-r-2 border-current rotate-45
+            after:content-[''] after:absolute after:left-1.5 after:w-full after:h-full 
+            after:border-t-2 after:border-r-2 after:border-current
+            ${
+              isActive
+                ? 'text-[#0864AF] translate-x-1'
+                : 'text-gray-400 group-hover:text-[#0864AF]'
+            }
+          `}
                   ></span>
                   <span>{link.name}</span>
                 </a>
               );
             })}
           </nav>
+          <div
+            className="mt-auto pt-6 border-t border-gray-200/50 flex flex-col items-center justify-center gap-2 z-20"
+            style={{ zIndex: 20 }}
+          >
+            <img
+              src={udsmLogo.src}
+              alt="University of Dar es Salaam"
+              className="h-15 w-auto object-contain opacity-100 transition-all duration-300"
+            />
+            <p className="text-[13px] font-mono tracking-widest text-gray-500 uppercase leading-tight text-center">
+              University of Dar es Salaam
+            </p>
+          </div>
         </div>
       )}
 
       {/* Desktop Sidebar */}
-      <aside className="hidden xl:flex flex-col fixed top-24 left-12 w-64 z-50">
+
+      <aside className="hidden xl:flex flex-col fixed top-24 left-8 w-64 z-50 h-[calc(100vh-6rem)] bg-transparent ">
         {/* Brand */}
         <div className="mb-12">
           <a
@@ -138,34 +151,62 @@ const Aside_Nav = () => {
         </div>
 
         {/* Links */}
-        <nav className="flex flex-col space-y-6 text-base tracking-wide">
+        <nav className="relative flex flex-col space-y-6 text-base tracking-wide">
+          {/* Continuous Gray Line */}
+          <span className="absolute left-0 top-0 h-full w-1 bg-gray-300"></span>
+
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
               <a
                 key={link.name}
                 href={link.href}
-                className={`flex items-center group transition-all duration-300 ${
+                className={`relative flex items-center group transition-all duration-300 pl-4 ${
                   isActive
                     ? 'text-[#0864AF] font-bold'
                     : 'text-gray-500 font-semibold hover:text-[#0864AF]'
                 }`}
               >
+                {/* Active Blue Line */}
+                {isActive && (
+                  <span className="absolute left-0 top-0 h-full w-1 bg-[#0864AF]"></span>
+                )}
+
+                {/* Icon */}
                 <span
                   className={`relative flex items-center mr-4 w-3 h-3 transition-all duration-300
-    /* Draw the first arrow */
-    border-t-2 border-r-2 border-current rotate-45
-    /* The second arrow via pseudo-element */
-    after:content-[''] after:absolute after:left-1.5 after:w-full after:h-full 
-    after:border-t-2 after:border-r-2 after:border-current
-    ${isActive ? 'text-[#0864AF] translate-x-1' : 'text-gray-400 group-hover:text-[#0864AF]'}
-  `}
+            border-t-2 border-r-2 border-current rotate-45
+            after:content-[''] after:absolute after:left-1.5 after:w-full after:h-full 
+            after:border-t-2 after:border-r-2 after:border-current
+            ${
+              isActive
+                ? 'text-[#0864AF] translate-x-1'
+                : 'text-gray-400 group-hover:text-[#0864AF]'
+            }
+          `}
                 ></span>
+
+                {/* Link Text */}
                 <span>{link.name}</span>
               </a>
             );
           })}
         </nav>
+
+        {/* UDSM Logo */}
+        <div
+          className="mt-auto pt-6 border-t border-gray-200/50 flex flex-col items-center justify-center gap-2 z-20"
+          style={{ zIndex: 20 }}
+        >
+          <img
+            src={udsmLogo.src}
+            alt="University of Dar es Salaam"
+            className="h-17 w-auto object-contain opacity-100 transition-all duration-300"
+          />
+          <p className="text-[13px] font-semibold tracking-widest text-gray-500 uppercase leading-tight text-center">
+            University of Dar es Salaam
+          </p>
+        </div>
       </aside>
     </>
   );
