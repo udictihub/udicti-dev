@@ -1,5 +1,4 @@
 import Abstract from '@/components/Abstract';
-import HeaderBar from '@/components/HeaderBar';
 import Aside_Nav from '@/components/Aside_Nav';
 import PhotosCard from '@/components/PhotosCard';
 import SessionsSection from '@/components/SessionsSection';
