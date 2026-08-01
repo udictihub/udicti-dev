@@ -6,12 +6,12 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen xl:grid xl:grid-cols-[10rem_minmax(0,1fr)] xl:gap-12 xl:items-start">
+    <main className="min-h-screen ">
       <Aside_Nav />
-      <div className="pt-16 xl:pt-0 w-full min-w-0 max-w-[100vw] overflow-x-hidden xl:col-start-2">
+      <div className="pt-14 xl:pt-0  flex-1 min-w-0 overflow-x-hidden ">
         <Abstract />
-        <SessionsSection />
         <PhotosCard />
+        <SessionsSection />
         <Footer />
       </div>
     </main>

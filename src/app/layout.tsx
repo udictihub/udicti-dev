@@ -11,10 +11,8 @@ export const metadata = {
   title: 'UDICTI',
   description: 'Building real world Systems',
   icons: {
-    icon: '/udicti_logo.svg', 
+    icon: '/udicti_logo.svg',
   },
-  
-
 };
 
 export default function RootLayout({

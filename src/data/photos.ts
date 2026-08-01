@@ -16,21 +16,35 @@ import demo2 from '@/assets/Demo-2.jpg';
 import demo3 from '@/assets/Demo-3.jpg';
 import udicti2 from '@/assets/Udicti-2.jpg';
 import udicti3 from '@/assets/Udicti-3.jpg';
+import imgUdicti00 from '@/assets/IMG_UDICTI_00.jpg';
+import imgUdicti01 from '@/assets/IMG_UDICTI_01.jpg';
+import imgUdicti02 from '@/assets/IMG_UDICTI_02.jpg';
+import imgUdicti03 from '@/assets/IMG_UDICTI_03.jpg';
+import imgUdicti04 from '@/assets/IMG_UDICTI_04.jpg';
+import imgUdicti05 from '@/assets/IMG_UDICTI_05.jpg';
 
 export const archivePhotos = [
   { img: imgMain.src, label: 'Kickoff' },
   { img: demo2.src, label: 'Demo Day 2' },
+  { img: imgUdicti02.src, label: 'Session' },
+  { img: imgUdicti05.src, label: 'Session' },
 
   { img: img1.src, label: 'Session 1' },
   { img: img2.src, label: 'Hackathon' },
-  { img: img3.src, label: 'Team' },
+  { img: imgUdicti01.src, label: 'Session' },
   { img: img4.src, label: 'Networking' },
+  { img: imgUdicti03.src, label: 'Session' },
+
   { img: img5.src, label: 'Code' },
+  { img: imgUdicti00.src, label: 'Session' },
+
   { img: demo3.src, label: 'Demo Day 3' },
 
   { img: img6.src, label: 'Workshop' },
   { img: img7.src, label: 'Mentorship' },
   { img: img8.src, label: 'Pitch' },
+  { img: imgUdicti04.src, label: 'Session' },
+
   { img: img9.src, label: 'Deep Dive' },
   { img: img10.src, label: 'Showcase' },
   { img: img11.src, label: 'Q&A' },

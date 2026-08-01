@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="w-full bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 font-medium">
+      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 font-medium">
         <p>
           &copy; {new Date().getFullYear()} UDICTI Tech. All rights reserved.
         </p>
