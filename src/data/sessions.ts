@@ -162,6 +162,7 @@ Gain a practical understanding of how systems run in real environments.
     day: '06',
     title: 'Leveraging OSS',
     time: '09:00 AM - 12:00 PM',
+    completed: 'done',
     desc: 'Exploring how modern computing is powered by open-source software, communities, and technologies.',
     image:
       'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80',
@@ -198,37 +199,42 @@ Gain a practical understanding of how systems run in real environments.
   {
     id: 7,
     month: 'June',
-    day: '20',
-    title: 'Enterprise Systems',
-    time: '10:00 AM - 12:00 PM',
-    desc: 'Understanding how large organizations build and manage technology.',
+    day: '13',
+    title: 'Startup Finance',
+    time: '09:00 AM - 12:00 PM',
+    desc: 'Understanding funding, financial management, and sustainable growth for technology ventures.',
     image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    completed: 'done',
     markdown: dedent`
-# Enterprise Systems
 
-Building for large organizations introduces new challenges—scale, coordination, security, and long-term stability.
+# Startup Finance
+
+Building a successful technology venture requires more than a great idea. Understanding how to manage finances, secure funding, and make informed business decisions is essential for transforming innovation into a sustainable enterprise.
 
 ---
 
 ## What we will explore
 
-- Working with large codebases  
-- Coordinating across teams  
-- Balancing business needs with technical decisions  
-- Managing risk and reliability  
+* Startup funding and investment
+* Financial planning and budgeting
+* Revenue models and pricing strategies
+* Equity, ownership, and cap tables
+* Financial statements and key business documents
+* Startup valuation and fundraising
+* Managing growth and financial sustainability
 
 ---
 
 ## Key idea
 
-Technology in organizations exists to serve broader goals, not just technical ones.
+Successful startups are built not only through innovation and technology, but also through sound financial decisions, strategic planning, and effective resource management.
 
 ---
 
 ## Outcome
 
-Understand the realities of building and maintaining systems at scale.
+Develop a practical understanding of startup finance, enabling you to make informed financial decisions, evaluate funding opportunities, and build technology ventures with long-term sustainability.
 `,
   },
 ];
