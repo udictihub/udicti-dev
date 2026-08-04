@@ -124,7 +124,7 @@ const Abstract = () => {
               onClick={() => setIsExpanded(!isExpanded)}
               className="group flex items-center gap-2 font-mono font-bold text-[#b18111] hover:text-[#0864AF] transition-colors uppercase tracking-wider text-sm cursor-pointer shrink-0 pb-1 relative"
             >
-              {/* Left Arrow Indicator - slides forward on hover */}
+              {/* Left Arrow Indicator */}
               <span
                 className={`inline-block text-base transition-transform duration-300 ease-out font-sans text-[#0864AF]
       ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-1'}
@@ -145,7 +145,7 @@ const Abstract = () => {
                 />
               </span>
 
-              {/* Right Arrow Indicator - only reveals itself on hover for that extra unique touch */}
+              {/* Right Arrow Indicator */}
               <span className="inline-block text-base opacity-0 -translate-x-2 transition-all duration-300 ease-out font-sans text-[#0864AF] group-hover:opacity-100 group-hover:translate-x-0">
                 «
               </span>

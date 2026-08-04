@@ -24,6 +24,9 @@ import imgUdicti04 from '@/assets/IMG_UDICTI_04.jpg';
 import imgUdicti05 from '@/assets/IMG_UDICTI_05.jpg';
 
 export const archivePhotos = [
+  { img: imgUdicti04.src, label: 'Session' },
+  { img: imgUdicti03.src, label: 'Session' },
+
   { img: imgMain.src, label: 'Kickoff' },
   { img: demo2.src, label: 'Demo Day 2' },
   { img: imgUdicti02.src, label: 'Session' },
@@ -33,7 +36,6 @@ export const archivePhotos = [
   { img: img2.src, label: 'Hackathon' },
   { img: imgUdicti01.src, label: 'Session' },
   { img: img4.src, label: 'Networking' },
-  { img: imgUdicti03.src, label: 'Session' },
 
   { img: img5.src, label: 'Code' },
   { img: imgUdicti00.src, label: 'Session' },
@@ -43,7 +45,6 @@ export const archivePhotos = [
   { img: img6.src, label: 'Workshop' },
   { img: img7.src, label: 'Mentorship' },
   { img: img8.src, label: 'Pitch' },
-  { img: imgUdicti04.src, label: 'Session' },
 
   { img: img9.src, label: 'Deep Dive' },
   { img: img10.src, label: 'Showcase' },

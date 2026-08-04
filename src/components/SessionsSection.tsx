@@ -42,7 +42,7 @@ const SessionsSection = () => {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative lg:border-l-2 lg:border-gray-100">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative lg:borde lg:border-gray-100">
         <div className="lg:col-span-6 order-1 lg:order-1 space-y-6 flex flex-col items-start lg:pr-8 ">
           {sessions.map((session) => (
             <div
