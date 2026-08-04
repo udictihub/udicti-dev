@@ -53,19 +53,18 @@ const Abstract = () => {
     <section
       id="manifesto"
       ref={containerRef}
-      className="max-w-6xl mx-auto px-6 py-14 border-l-2 border-gray-100/80 relative overflow-hidden"
+      className="max-w-6xl mx-auto px-6 py-14 relative overflow-hidden xl:pl-[max(0px,_240px_-_(100vw_-_1152px)/2)]"
     >
-      <div className="flex flex-col w-full items-start">
+      <div className="flex flex-col w-full items-start border-l-2 border-gray-100/80 pl-6">
         <div className="w-full max-w-5xl space-y-6 z-10">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
-            Where {/* 1. Static Polygon Wrapper Container */}
+            Where
             <span
               className="relative inline-flex items-center justify-center min-w-[200px] h-[64px] bg-[#0864AF] mx-2 shadow-lg"
               style={{
                 clipPath: 'polygon(2% 8%, 98% 4%, 99% 87%, 4% 94%, 0% 50%)',
               }}
             >
-              {/* 2. Decoupled Animating Word Layer */}
               <span
                 ref={wordRef}
                 className="text-white italic underline decoration-4 decoration-[#b18111]/30 underline-offset-8 font-mono tracking-normal text-center z-10 px-4"
