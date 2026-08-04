@@ -13,7 +13,7 @@ const SessionsSection = () => {
   return (
     <section
       id="sessions"
-      className="max-w-6xl mx-auto px-6 pb-8 pt-14 relative border-t-2 border-gray-200"
+      className="max-w-6xl mx-auto px-6 pb-8 pt-14 relative border-t-2 border-gray-200 xl:pl-[max(0px,_300px_-_(100vw_-_1152px)/2)]"
     >
       <div className="lg:hidden mb-10 mt-4">
         <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-6">

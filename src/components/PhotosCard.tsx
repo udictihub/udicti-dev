@@ -57,7 +57,7 @@ const PhotosCard = () => {
         });
         setChangingIndices([]);
       }, 600);
-    }, 2500);
+    }, 3500);
 
     return () => {
       clearInterval(interval);
@@ -121,9 +121,9 @@ const PhotosCard = () => {
   return (
     <section
       id="archive"
-      className="w-full flex flex-col items-center justify-center overflow-hidden bg-gray-200"
+      className="w-full flex flex-col items-center justify-center overflow-hidden bg-gray-200 xl:pl-[max(0px,_240px_-_(100vw_-_1152px)/2)]"
     >
-      <div className="max-w-6xl mx-auto px-6 py-14 relative border-t-2 border-gray-200 w-full">
+      <div className="max-w-6xl mx-auto px-6 py-14 relative border-t-2 border-gray-200 w-full ">
         <div className="text-center mb-16 relative z-10 px-6">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]">
             The{' '}
@@ -157,7 +157,7 @@ const PhotosCard = () => {
                   role="button"
                   tabIndex={0}
                   onClick={() => openLightbox(i)}
-                  onKeyDown={(e) => handleKeyDown(e, i)} 
+                  onKeyDown={(e) => handleKeyDown(e, i)}
                   className={[
                     'relative w-[150px] aspect-[3/4] rounded-xl overflow-hidden shrink-0',
                     'border-4 border-white shadow-xl cursor-pointer snap-center',

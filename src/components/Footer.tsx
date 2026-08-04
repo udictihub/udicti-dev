@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-50 border-t border-gray-200">
+    <footer className="w-full bg-gray-50 border-t border-gray-200 xl:pl-[max(0px,_330px_-_(100vw_-_1152px)/2)]">
       <div className="max-w-6xl mx-auto px-6 py-11 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 font-medium">
         <p>
           &copy; {new Date().getFullYear()} UDICTI Tech. All rights reserved.
