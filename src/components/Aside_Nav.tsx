@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import udsmLogo from '@/assets/udsm_logo.png';
 const navLinks = [
   { name: 'Manifesto', href: '#manifesto' },
-  { name: 'Sessions', href: '#sessions' },
   { name: 'The Archive', href: '#archive' },
+  { name: 'Sessions', href: '#sessions' },
 ];
 
 const Aside_Nav = () => {
@@ -52,28 +52,27 @@ const Aside_Nav = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="text-[#0864AF] focus:outline-none"
         >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {isOpen ? (
+          {isOpen ? (
+            <svg
+              className="w-6 h-6 text-[#0864AF]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={2.5}
                 d="M6 18L18 6M6 6l12 12"
               />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+            </svg>
+          ) : (
+            <div className="flex flex-col items-start gap-1.5 w-7">
+              <span className="h-0.5 w-full bg-[#0864AF] rounded-full transition-all duration-300" />
+              <span className="h-0.5 ml-1 w-3/4 bg-[#0864AF] rounded-full transition-all duration-300" />
+              <span className="h-0.5 ml-2 w-1/2 bg-[#0864AF] rounded-full transition-all duration-300" />
+            </div>
+          )}
         </button>
       </div>
 
@@ -81,19 +80,28 @@ const Aside_Nav = () => {
 
       {isOpen && (
         <div className="xl:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-8 flex flex-col justify-between">
-          <nav className="flex flex-col space-y-6 text-base tracking-wide">
+          <nav className="relative flex flex-col space-y-6 text-base tracking-wide">
+            {/* Continuous Gray Line */}
+            <span className="absolute left-0 top-0 h-full w-1 bg-gray-300"></span>
+
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`flex items-center group transition-all duration-300 pl-4 ${
+                  className={`relative flex items-center group transition-all duration-300 pl-4 ${
                     isActive
-                      ? 'text-[#0864AF] font-bold border-l-4 border-[#0864AF]'
-                      : 'text-gray-500 font-semibold border-l-4 border-transparent hover:border-[#0864AF]'
+                      ? 'text-[#0864AF] font-bold'
+                      : 'text-gray-500 font-semibold hover:text-[#0864AF]'
                   }`}
                 >
+                  {/* Active Blue Line */}
+                  {isActive && (
+                    <span className="absolute left-0 top-0 h-full w-1 bg-[#0864AF]"></span>
+                  )}
+
+                  {/* Icon */}
                   <span
                     className={`relative flex items-center mr-4 w-3 h-3 transition-all duration-300
             border-t-2 border-r-2 border-current rotate-45
@@ -106,6 +114,8 @@ const Aside_Nav = () => {
             }
           `}
                   ></span>
+
+                  {/* Link Text */}
                   <span>{link.name}</span>
                 </a>
               );
@@ -195,7 +205,7 @@ const Aside_Nav = () => {
 
         {/* UDSM Logo */}
         <div
-          className="mt-auto pt-6 border-t border-gray-200/50 flex flex-col items-center justify-center gap-2 z-20"
+          className="mt-auto pt-5 border-r border-gray-200/50 flex flex-col items-center justify-center gap-2 z-20"
           style={{ zIndex: 20 }}
         >
           <img
