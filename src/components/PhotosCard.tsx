@@ -7,6 +7,7 @@ import { archivePhotos } from '@/data/photos';
 const breakpoints = [
   { maxWidth: 640, hexW: 130, pattern: [1, 2], repeat: true },
   { maxWidth: 1024, hexW: 280, pattern: [2, 3, 2], repeat: false },
+  { maxWidth: 1600, hexW: 280, pattern: [2, 3, 2], repeat: false },
   { maxWidth: Infinity, hexW: 280, pattern: [3, 4, 3], repeat: false },
 ];
 
@@ -121,7 +122,7 @@ const PhotosCard = () => {
   return (
     <section
       id="archive"
-      className="w-full flex flex-col items-center justify-center overflow-hidden bg-gray-200 xl:pl-[max(0px,_240px_-_(100vw_-_1152px)/2)]"
+      className="w-full flex flex-col items-center justify-center overflow-hidden bg-gray-200 xl:pl-[max(0px,_280px_-_(100vw_-_1152px)/2)]"
     >
       <div className="max-w-6xl mx-auto px-6 py-14 relative border-t-2 border-gray-200 w-full ">
         <div className="text-center mb-16 relative z-10 px-6">
