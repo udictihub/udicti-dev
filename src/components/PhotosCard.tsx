@@ -30,15 +30,17 @@ const STRIP_OVERLAP = 70;
 const PhotosCard = () => {
   const [config, setConfig] = useState(breakpoints[2]);
   const [shuffledPhotos, setShuffledPhotos] = useState(archivePhotos);
+
   const [changingIndices, setChangingIndices] = useState<number[]>([]);
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const [lightboxLoaded, setLightboxLoaded] = useState(false);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
     const interval = setInterval(() => {
       const visibleCount = config.pattern.reduce((a, b) => a + b, 0);
+
       const idx1 = Math.floor(
         Math.random() * Math.min(archivePhotos.length, visibleCount),
       );
@@ -50,22 +52,22 @@ const PhotosCard = () => {
 
       setChangingIndices([idx1, idx2]);
 
-      timeoutId = setTimeout(() => {
+      setTimeout(() => {
         setShuffledPhotos((prev) => {
           const newArr = [...prev];
           [newArr[idx1], newArr[idx2]] = [newArr[idx2], newArr[idx1]];
           return newArr;
         });
         setChangingIndices([]);
-      }, 600);
-    }, 3500);
+      }, 800);
+    }, 4500);
 
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeoutId);
-    };
+    return () => clearInterval(interval);
   }, [config.pattern]);
 
+  // Window Resize effect — now only picks the hex grid's internal
+  // pattern/size config. It no longer decides mobile-vs-desktop layout,
+  // so there's nothing for it to "correct" after mount, and nothing to flash.
   useEffect(() => {
     const handleResize = () => {
       const w = window.innerWidth;
@@ -80,21 +82,10 @@ const PhotosCard = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const openLightbox = (index: number) => {
-    setActiveIndex(index);
+  // Reset the fade-in state every time a new photo is opened in the lightbox
+  useEffect(() => {
     setLightboxLoaded(false);
-  };
-
-  const closeLightbox = () => {
-    setActiveIndex(null);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openLightbox(index);
-    }
-  };
+  }, [activeIndex]);
 
   const getPattern = () => {
     if (!config.repeat) return config.pattern;
@@ -124,7 +115,7 @@ const PhotosCard = () => {
       id="archive"
       className="w-full flex flex-col items-center justify-center overflow-hidden bg-gray-200 xl:pl-[max(0px,_280px_-_(100vw_-_1152px)/2)]"
     >
-      <div className="max-w-6xl mx-auto px-6 py-14 relative border-t-2 border-gray-200 w-full ">
+      <div className="max-w-6xl mx-auto px-6 py-14 relative border-t-2 border-gray-200 w-full">
         <div className="text-center mb-16 relative z-10 px-6">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]">
             The{' '}
@@ -142,7 +133,8 @@ const PhotosCard = () => {
           </p>
         </div>
 
-        {/* ---------- MOBILE: Horizontal Fan Strip + Lightbox ---------- */}
+        {/* ---------- MOBILE: Horizontal Fan Strip + Lightbox ----------
+         */}
         <div className="md:hidden">
           <div
             className="relative z-10 flex items-center overflow-x-auto snap-x snap-mandatory pb-6 pt-4 px-6 -mx-6 no-scrollbar"
@@ -157,8 +149,7 @@ const PhotosCard = () => {
                   key={data.img}
                   role="button"
                   tabIndex={0}
-                  onClick={() => openLightbox(i)}
-                  onKeyDown={(e) => handleKeyDown(e, i)}
+                  onClick={() => setActiveIndex(i)}
                   className={[
                     'relative w-[150px] aspect-[3/4] rounded-xl overflow-hidden shrink-0',
                     'border-4 border-white shadow-xl cursor-pointer snap-center',
@@ -190,14 +181,16 @@ const PhotosCard = () => {
           {activeIndex !== null && (
             <div
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-8 transition-opacity duration-300 opacity-100"
-              onClick={closeLightbox}
-              role="dialog"
-              aria-modal="true"
+              onClick={() => setActiveIndex(null)}
             >
               <div
                 className="relative w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-300 scale-100"
                 onClick={(e) => e.stopPropagation()}
               >
+                {/* Instant placeholder: the same small image already cached
+                    from the thumbnail grid. It's already in the browser's
+                    cache (same src+sizes as the grid card), so it paints
+                    immediately with zero network delay, just visibly soft. */}
                 <Image
                   src={shuffledPhotos[activeIndex].img}
                   alt=""
@@ -208,6 +201,7 @@ const PhotosCard = () => {
                   className="object-cover scale-105 blur-sm"
                 />
 
+                {/* Full-resolution image, fades in on top once loaded */}
                 <Image
                   src={shuffledPhotos[activeIndex].img}
                   alt={shuffledPhotos[activeIndex].label}
@@ -228,7 +222,7 @@ const PhotosCard = () => {
                   </span>
                 </div>
                 <button
-                  onClick={closeLightbox}
+                  onClick={() => setActiveIndex(null)}
                   className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-lg leading-none"
                   aria-label="Close"
                 >
@@ -239,7 +233,8 @@ const PhotosCard = () => {
           )}
         </div>
 
-        {/* ---------- TABLET / DESKTOP: Hex Grid ---------- */}
+        {/* ---------- TABLET / DESKTOP: Hex Grid ----------
+         */}
         <div
           className="hidden md:flex flex-col items-start relative z-10"
           style={{ paddingLeft: `${shift}px` }}
@@ -271,7 +266,7 @@ const PhotosCard = () => {
                   }}
                 >
                   <div
-                    className={`absolute inset-0 transition-all duration-[600ms] ease-in-out ${
+                    className={`absolute inset-0 transition-all duration-[800ms] ease-in-out ${
                       isChanging
                         ? 'opacity-0 scale-90'
                         : 'opacity-100 scale-100'
