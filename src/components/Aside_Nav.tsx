@@ -213,7 +213,8 @@ const Aside_Nav = () => {
             alt="University of Dar es Salaam"
             className="h-17 w-auto object-contain opacity-100 transition-all duration-300"
           />
-          <p className="text-[13px] font-semibold tracking-widest text-gray-500 uppercase leading-tight text-center">
+
+          <p className="text-[10.5px] font-semibold tracking-wide text-gray-500 uppercase leading-snug text-left ">
             University of Dar es Salaam
           </p>
         </div>
